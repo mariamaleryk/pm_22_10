@@ -1,79 +1,66 @@
+const gulp = require("gulp");
 const { src, dest, series, parallel, watch } = require('gulp');
-const fileinclude = require('gulp-file-include');
+const file_include = require('gulp-file-include')
 const concat = require('gulp-concat');
 const sass = require('gulp-sass')(require('sass'));
+const postcss = require('gulp-postcss');
 const cssnano = require('gulp-cssnano');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
+// html task
+const html_task = () =>  src('app/*.html')
+    .pipe(file_include({
+        prefix: '@@',
+        basepath: '@file'
+    }))
+    .pipe(dest('dist'));
+
 
 //js task
-gulp.task('js', function() {
-    return gulp.src('src/js/**/*.js')
-        .pipe(concat('main.js'))
-        .pipe(uglify())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/js'))
-        .pipe(browserSync.stream());
-});
-//html task
-gulp.task('html', function() {
-    return gulp.src('src/*.html')
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file'
-        }))
-        .pipe(gulp.dest('dist'))
-        .pipe(browserSync.stream());
-});
+const js_task = () => src('app/js/*.js')
+    .pipe(concat('script.min.js'))
+    .pipe(uglify())
+    .pipe(dest('dist/js'));
+
+
 //scss task
-gulp.task('scss', function() {
-    return gulp.src('src/scss/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(cssnano())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/css'))
-        .pipe(browserSync.stream());
-});
+const scss_task = () => {
+    return src('app/scss/*.scss') // Вибір файлів SCSS
+        .pipe(sass()) // Компіляція SCSS у CSS
+        .pipe(cssnano()) // Мінімізація CSS
+        .pipe(rename({suffix: '.min'})) // Додавання суфіксу .min до файлу
+        .pipe(dest('dist/css')); // Збереження результату
+};
 
-//img task
-gulp.task('img', function() {
-    return gulp.src('app/img/**/*.+(jpg|jpeg|png|gif)',{encoding: false})
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            interlaced: true
-        }))
-        .pipe(dest('dist/imgs'))
-});
 
-// gulp.task('img', function() {
-//     return gulp.src('app/img/**/*.+(jpg|jpeg|png|gif)',{encoding: false})
-//         .pipe(imagemin())
-//         .pipe(gulp.dest('dist/imgs'))
-//         .on('data',function(file){
-//             console.log('Processing file:',file.path);
-//         })
-//         .on('end', function(){
-//             console.log('Done');
-//         });
-// });
+//img tadk
+const img_task = () =>  src('app/img/*.+(jpg|jpeg|png|gif)',{encoding: false})
+    .pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        interlaced: true
+    }))
+    .pipe(dest('dist/imgs'))
+
 
 // BrowserSync task
-gulp.task('serve', function() {
-    browserSync.init({
-        server: 'dist'
+const browserSync_task = () => browserSync.init(
+    {
+        server: {
+            baseDir: './dist'
+        }
     });
 
-    gulp.watch('src/*.html', gulp.series('html'));
-    gulp.watch('src/scss/**/*.scss', gulp.series('scss'));
-    gulp.watch('src/js/**/*.js', gulp.series('js'));
-    gulp.watch('src/img/**/*', gulp.series('img'));
-});
+//watch task
+const watch_task = () => {
+    browserSync_task();
+    watch('app/*.html', parallel(html_task));
+    watch('app/scss/*.scss', parallel(scss_task));
+    watch('app/js/*.js', parallel(js_task));
+    watch('app/img/*.+(jpg|jpeg|png|gif', img_task);
+}
 
-gulp.task('default', gulp.series(
-    gulp.parallel('html', 'scss', 'js' ,'img'), 'serve'
-));
-exports.default = series('html', 'scss', 'js', 'img', 'serve');
+exports.default = series(html_task, scss_task, img_task, watch_task,js_task );
