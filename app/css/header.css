@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#header {
+    background-color: #f7f7f7;
+    padding: 60px 0;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.title {
+    font-size: 24px;
+    color: #4a4a4a;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #f3f3f3;
+}
+
+.text-right img {
+    border-radius: 50%;
+}
+
+.container {
+    max-width: 900px;
+}
+
+h1, p {
+    margin: 0;
+}

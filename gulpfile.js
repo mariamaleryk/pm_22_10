@@ -16,7 +16,8 @@ const html_task = () =>  src('app/*.html')
         prefix: '@@',
         basepath: '@file'
     }))
-    .pipe(dest('dist'));
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream());
 
 
 //js task
@@ -43,7 +44,7 @@ const img_task = () =>  src('app/img/*.+(jpg|jpeg|png|gif)',{encoding: false})
         svgoPlugins: [{removeViewBox: false}],
         interlaced: true
     }))
-    .pipe(dest('dist/imgs'))
+    .pipe(dest('dist/img'))
 
 
 // BrowserSync task
@@ -53,14 +54,23 @@ const browserSync_task = () => browserSync.init(
             baseDir: './dist'
         }
     });
-
+// CSS Task
+// const css_task = () => {
+//     return src('app/css/*.css')
+//         .pipe(postcss())
+//         .pipe(cssnano())
+//         .pipe(rename({suffix: '.min'}))
+//         .pipe(dest('dist/css'))
+//         .pipe(browserSync.stream());
+// };
 //watch task
 const watch_task = () => {
     browserSync_task();
     watch('app/*.html', parallel(html_task));
     watch('app/scss/*.scss', parallel(scss_task));
     watch('app/js/*.js', parallel(js_task));
+    // watch('app/css/*.css', parallel(css_task));
     watch('app/img/*.+(jpg|jpeg|png|gif', img_task);
 }
 
-exports.default = series(html_task, scss_task, img_task, watch_task,js_task );
+exports.default = series(html_task, scss_task/*,css_task*/, img_task, watch_task,js_task );
