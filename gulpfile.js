@@ -9,7 +9,6 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
-
 // html task
 const html_task = () =>  src('app/*.html')
     .pipe(file_include({
@@ -18,25 +17,20 @@ const html_task = () =>  src('app/*.html')
     }))
     .pipe(dest('dist'))
     .pipe(browserSync.stream());
-
-
 //js task
 const js_task = () => src('app/js/*.js')
     .pipe(concat('script.min.js'))
     .pipe(uglify())
     .pipe(dest('dist/js'));
-
-
 //scss task
 const scss_task = () => {
-    return src('app/scss/*.scss') // Вибір файлів SCSS
-        .pipe(sass()) // Компіляція SCSS у CSS
-        .pipe(cssnano()) // Мінімізація CSS
-        .pipe(rename({suffix: '.min'})) // Додавання суфіксу .min до файлу
-        .pipe(dest('dist/css')); // Збереження результату
+    return src('app/scss/*.scss') // Select all SCSS files
+        .pipe(sass().on('error', sass.logError)) // Compile SCSS to CSS, handle errors
+        .pipe(cssnano()) // Minify CSS
+        .pipe(rename({suffix: '.min'})) // Add .min suffix to the output file
+        .pipe(dest('dist/css')) // Output to 'dist/css' folder
+        .pipe(browserSync.stream()); // Reload BrowserSync
 };
-
-
 //img tadk
 const img_task = () =>  src('app/img/*.+(jpg|jpeg|png|gif)',{encoding: false})
     .pipe(imagemin({
@@ -45,8 +39,6 @@ const img_task = () =>  src('app/img/*.+(jpg|jpeg|png|gif)',{encoding: false})
         interlaced: true
     }))
     .pipe(dest('dist/img'))
-
-
 // BrowserSync task
 const browserSync_task = () => browserSync.init(
     {
@@ -54,15 +46,6 @@ const browserSync_task = () => browserSync.init(
             baseDir: './dist'
         }
     });
-// CSS Task
-// const css_task = () => {
-//     return src('app/css/*.css')
-//         .pipe(postcss())
-//         .pipe(cssnano())
-//         .pipe(rename({suffix: '.min'}))
-//         .pipe(dest('dist/css'))
-//         .pipe(browserSync.stream());
-// };
 //watch task
 const watch_task = () => {
     browserSync_task();
@@ -72,5 +55,4 @@ const watch_task = () => {
     // watch('app/css/*.css', parallel(css_task));
     watch('app/img/*.+(jpg|jpeg|png|gif', img_task);
 }
-
 exports.default = series(html_task, scss_task/*,css_task*/, img_task, watch_task,js_task );
