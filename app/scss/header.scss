@@ -2,48 +2,51 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #ffffff;
+  background-color: #fff;
 }
  .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 875px;
-    height: 998px;
     margin: 0 auto;
-    position: relative;
+
 
     .text-section {
       display: flex;
       flex-direction: column;
       justify-content: left;
-      max-width: 100%;
+      margin-top: 175px;
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      margin-left: 75px;
+      box-sizing: border-box;
+      //max-width: 100%;
+
 
       .header-title {
-        font-size: 95px;
-        text-transform: uppercase;
+        font-size: 75px;
+
+        //text-transform: uppercase;
         color: #ffd738;
         font-weight: 500;
-        font-family: "Montserrat", sans-serif;
-        margin: 0;
+        //font-family: "Montserrat", sans-serif;
+        //margin-left: 75px;
       }
       .header-title-b{
-        font-size: 95px;
-        text-transform: uppercase;
-        color: #000000;
+        font-size: 75px;
+        //text-transform: uppercase;
+        color: #000;
         font-weight: bold;
-        font-family: "Montserrat", sans-serif;
-        margin: 0;
+        //margin-left: 75px;
       }
 
       .header-subtitle {
         font-size: 33px;
-        text-transform: uppercase;
+        //text-transform: uppercase;
         color: #363636;
         font-weight: 500;
-        font-family: "Montserrat", sans-serif;
+        //font-family: "Montserrat", sans-serif;
         letter-spacing: 1px;
-        //margin: 14px 0 0 0;
       }
     }
 
@@ -55,18 +58,22 @@
       background-color: #fff;
 
       .profile-image {
-        //change
-        width: 100%;
+        width: 350px;
         height: auto;
+        right: 300px;
+        top: 80px;
+        position: absolute;
         border-radius: 5px;
+        z-index: 2;
       }
     }
-    //.yellow-column {
-    //  width: 805px;
-    //  height: 921px;
-    //  background-color: #ffd738;
-    //  position: absolute;
-    //  right: 0;
-    //  top: 0;
-    //}
+   .yellow-column {
+     width: 500px;
+     height: 598px;
+     background-color: #ffd738;
+     position: absolute;
+     right: 0;
+     top: 0;
+     z-index: 1;
+   }
   }
