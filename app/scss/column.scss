@@ -1,0 +1,194 @@
+.gray-column {
+  background-color: #2b3036;
+  left: 75px;
+  width: 935px;
+  //height: 1450px;
+  z-index: 1;
+}
+.white-column {
+  background-color: #ffffff;
+  right: 0;
+}
+.education-section, .experience-section, .expertise-section, .about-me-section, .contact-info-section {
+  padding-top: 120px;
+}
+.section-header {
+  background-color: #373c42;
+  width: 1000px;////////////////////////////////////////////////////////////////
+  font-size: 30px;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 5px;
+  line-height: 21px;
+  font-weight: bold;
+  border-left: 35px solid #ffc905;
+  padding-left: 75px;
+  color: #f1f1f1;
+}
+.line {
+  display: inline-block;
+  background-color: #ffc905;
+  height: 5px;
+  width: 40px;
+  bottom:0;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.education-item {
+  padding-left: 120px;
+  padding-right: 120px;
+  font-family: "Poppins", sans-serif;
+  color:#f1f1f1;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.education-item h3 {
+  font-family: "Poppins", sans-serif;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.education-item p, .experience-item p {
+  margin-top: 20px;
+}
+.experience-item {
+    padding-left: 120px;
+    padding-right: 120px;
+    font-family: "Open Sans", sans-serif;
+    color:#f1f1f1;
+    font-size: 20px;
+    font-weight: 400;
+  letter-spacing: 2px;
+  }
+.experience-item h3 {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.tag {
+  font-family: "Open Sans", sans-serif;
+  background-color: #ffc905;
+  color: #2b3036;
+  padding: 5px 33px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.skills {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.skill {
+  text-align: center;
+}
+.outer-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(#ffc905 75%, #f1f1f1 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.inner-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #2b3036;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-circle span {
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 14px;
+  text-align: center;
+  color: #f1f1f1;
+  font-family: "Poppins", sans-serif;
+}
+.about-me-section {
+  color: #2b3036;
+}
+
+.about-me-section p {
+  line-height: 1.6;
+}
+
+.about-header, .contact-header {
+  background-color: #f1f1f1;
+  position: relative;
+  padding-left: 30px;
+  padding-top: 15px;
+  color: #2b3036;
+}
+
+.contact-info-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.contact-info-section ul li {
+  margin-bottom: 10px;
+}
+
+.contact-info-section ul li strong {
+  display: block;
+}
+.p-3{
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  color:#2b3036;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.hobbies {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.hobby {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-wrapper {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #ffc905;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.icon-wrapper img {
+  width: 60%;
+  height: auto;
+  filter: invert(1) sepia(1) saturate(1000%) hue-rotate(670deg) ;
+
+}
+
+
+.hobbies-section p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
