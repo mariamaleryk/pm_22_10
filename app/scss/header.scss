@@ -1,40 +1,20 @@
-//@import "C:\Users\admin\pm_22_10\node_modules\bootstrap\scss\bootstrap";
-
 .block {
   max-width: 100%;
   background-color: #fff;
 }
-//all fonts
+
+////all fonts
 .Mont{
   font-family: "Montserrat", sans-serif;
 }
-.Beb{
-  font-family: "Bebas Neue", sans-serif;
-}
-.Pop{
-  font-family: "Poppins", sans-serif;
-}
-.Sans{
-  font-family: "Open Sans", sans-serif;
-}
-//colors
-.yellow{
-  color: #ffc905;
-}
-.grey{
-  color: #373c42;
-}
-.dark-white{
-  color: #f1f1f1;
-}
-
 .text-section {
   padding-left: 75px;
+  margin-bottom: 128px;
 }
 //michel
 .header-title {
   text-transform: uppercase;
-  padding-top: 175px;
+  padding-top: 215px;
   font-size: 75px;
   color: #ffc905;
 }
@@ -48,50 +28,49 @@
 .header-subtitle {
   font-size: 40px;
   letter-spacing: 1px;
-  margin-bottom: 168px;
 }
 .yellow-column {
-  width: 500px;
-  height: 598px;
+  //width: 500px;598
+  height: 2200px;
   background-color: #ffc905;
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: 0;
 }
 .profile-image {
-  width: 350px;
   height: auto;
-  right: 300px;
+  width: 370px;
+  //right: 20%;
+  right:325px;
   top: 80px;
+  position: absolute;
   z-index: 2;
 }
-
-//.line-horizontal1 {
-//  position: absolute;
-//  top: 50%;
-//  left: -120px;
-//  width: 100px;
-//  height: 4px;
-//  background-color: #ffd738;
-//  //transform: translateY(-50%);
-//  //z-index: 3;
-//}
-//.line-horizontal2 {
-//  position: absolute;
-//  top: 30%;
-//  left: -10px;
-//  width: 4px;
-//  height: 100px;
-//  background-color: #363636;
-//  z-index: 3;
-//}
-//.line-horizontal3 {
-//  position: absolute;
-//  bottom: -30px;
-//  left: 30px;
-//  width: 150px;
-//  height: 4px;
-//  background-color: #fff;
-//  z-index: 3;
-//}
+.line-horizontal1 {
+  position: absolute;
+  top: 470px;
+  right: 200px;
+  width: 265px;
+  height: 9px;
+  background-color: #ffffff;
+  z-index: 3;
+}
+.line-horizontal2 {
+  position: absolute;
+  top: 195px;
+  right: 630px;
+  width: 100px;
+  height: 6px;
+  background-color: #2b3036;
+  z-index: 3;
+}
+.line-horizontal3 {
+  top:300px;
+  position: absolute;
+  right: 200px;
+  width: 700px;
+  height: 9px;
+  background-color: #ffc905;
+  z-index: 1;
+}
