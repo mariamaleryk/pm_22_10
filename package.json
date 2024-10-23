@@ -5,7 +5,9 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-postcss": "^10.0.0",
-    "gulp-sass": "^5.1.0"
+    "gulp-sass": "^5.1.0",
+    "react-circular-progressbar": "^2.1.0",
+    "react-move": "^6.5.0"
   },
   "name": "pm_22_10",
   "version": "1.0.0",

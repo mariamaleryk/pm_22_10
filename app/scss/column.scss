@@ -110,6 +110,12 @@
   font-weight: 600;
 }
 
+text.Data {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  fill: #f1f1f1;
+}
+
 .tag {
   font-family: "Open Sans", sans-serif;
   background-color: #ffc905;
@@ -187,15 +193,16 @@
   margin-bottom: 30px;
 }
 
-.Data,
-.tspan {
-  font-family: "Poppins", sans-serif;
-  font-size: 15px;
-  color: #f1f1f1;
-  //fill: #ffffff;
+.yellow-column-bottom {
+  height: 80px;
+  width: 100%;
+  background-color: #ffc905;
+  right: 0;
+  bottom: 0
 }
 
-//////////////////////////////////////////////////CIRCLES///////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////CIRCLES////////////////////////////////////////////
 .circle {
   fill: none;
   stroke-width: 15px;
@@ -216,166 +223,26 @@
 
 .third-circle {
   stroke: #CDCDCD;
-  //stroke-dasharray: none;
   stroke-dashoffset: 0;
 }
 
 .animated-circle {
-  animation: 3s linear forwards;
-  animation-delay: 2s;
+  animation: draw-circle 3s ease-in-out forwards;
 }
 
-.rotate-variant-01 {
-  animation-name: anim-variant-01;
-}
-
-.rotate-variant-02 {
-  animation-name: anim-variant-02;
-}
-
-.rotate-variant-11 {
-  animation-name: anim-variant-11;
-}
-
-.rotate-variant-12 {
-  animation-name: anim-variant-12;
-}
-
-.rotate-variant-21 {
-  animation-name: anim-variant-21;
-}
-
-.rotate-variant-22 {
-  animation-name: anim-variant-22;
-}
-
-.rotate-variant-31 {
-  animation-name: anim-variant-31;
-}
-
-.rotate-variant-32 {
-  animation-name: anim-variant-32;
-}
-
-@keyframes anim-variant-01 {
-  to {
-    stroke-dashoffset: 68.43;
-    transform: rotate(59.2deg);
+@keyframes draw-circle {
+  0% {
+    stroke-dashoffset: 377;
+  }
+  50% {
+    stroke-dashoffset: 0;
   }
 }
-
-@keyframes anim-variant-02 {
-  to {
-    stroke-dashoffset: 59.86;
-    transform: rotate(55deg);
-  }
-}
-
-@keyframes anim-variant-11 {
-  to {
-    stroke-dashoffset: 85.57;
-    transform: rotate(74.2deg);
-  }
-}
-
-@keyframes anim-variant-12 {
-  to {
-    stroke-dashoffset: 77;
-    transform: rotate(70deg);
-  }
-}
-
-@keyframes anim-variant-21 {
-  to {
-    stroke-dashoffset: 102.71;
-    transform: rotate(89.2deg);
-  }
-}
-
-@keyframes anim-variant-22 {
-  to {
-    stroke-dashoffset: 94.14;
-    transform: rotate(85deg);
-  }
-}
-
-@keyframes anim-variant-31 {
-  to {
-    stroke-dashoffset: 85.57;
-    transform: rotate(74.2deg);
-  }
-}
-
-@keyframes anim-variant-32 {
-  to {
-    stroke-dashoffset: 77;
-    transform: rotate(70deg);
-  }
-}
-
 
 .hidden {
   display: none;
   transition: height 0.5s ease-out;
 }
 
-.yellow-column-bottom {
-  height: 80px;
-  width: 100%;
-  background-color: #ffc905;
-  right: 0;
-  bottom: 0
-}
 
-//.skill-container {
-//  display: flex;
-//  //align-items: center;
-//  //justify-content: center;
-//}
-//.skill-container .skill {
-//  position: relative;
-//  margin-right: 40px;
-//}
-//.skill-container .skill .outer {
-//  height: 160px;
-//
-//  width: 160px;
-//  border-radius: 50%;
-//  padding: 20px;
-//  box-shadow: 2px 2px 10px -1px rgba(0 0 0 /.15),
-//  -6px -6px 10px -1px rgba(255 255 255 / .7);
-//}
-//.skill-container .skill .outer .inner {
-//  display: flex;
-//  stroke: #CDCDCD;
-//  align-items: center;
-//  justify-content: center;
-//  height: 120px;
-//  width: 120px;
-//  border-radius: 50%;
-//  box-shadow: inset 4px 4px 6px -1px rgba(0 0 0/ .2),
-//  inset -4px -4px 6px -1px rgba(255 255 255 / .7),
-//  -.5px -.5px 0px rgba(255 255 255 / 1),
-//  .5px .5px 0px rgba(0 0 0 /.15),
-//  0px 12px 10px -10px rgba(0 0 0 / 0.05);
-//}
-//.skill-container .skill .outer .inner .number {
-//  font-weight: 800;
-//}
-//circle {
-//  fill: none;
-//  stroke-width: 15px;
-//  stroke-dasharray: 472;
-//  stroke-dashoffset: 472;
-//  transition: 2s linear;
-//  transform-origin: 50% 50%;
-//  stroke: #CDCDCD;
-//}
-//svg {
-//  position: absolute;
-//  top: 0;
-//  left: 0;
-//}
-//.skill-container{
-//  stroke: #FFC905;
-//}
+

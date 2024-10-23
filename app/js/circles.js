@@ -1,49 +1,28 @@
-// const circles = document.querySelectorAll('.circle');
-//
-// function animateCircle(circle, dashOffset, rotation, duration, delay) {
-//     setTimeout(() => {
-//         circle.style.transition = `stroke-dashoffset ${duration}s linear, transform ${duration}s linear`;
-//         circle.style.strokeDashoffset = dashOffset;
-//         circle.style.transform = `rotate(${rotation}deg)`;
-//     }, delay * 1000);
-// }
-//
-// function addAnimation() {
-//     circles.forEach((circle, index) => {
-//         circle.style.strokeDasharray = 377;
-//         circle.style.strokeDashoffset = 377;
-//
-//         switch (index) {
-//             case 0:
-//                 animateCircle(circle, 68.43, 59.2, 3, 2);
-//                 break;
-//             case 1:
-//                 animateCircle(circle, 59.86, 55, 3, 2);
-//                 break;
-//             case 2:
-//                 animateCircle(circle, 85.57, 74.2, 3, 2);
-//                 break;
-//             case 3:
-//                 animateCircle(circle, 77, 70, 3, 2);
-//                 break;
-//             case 4:
-//                 animateCircle(circle, 102.71, 89.2, 3, 2);
-//                 break;
-//             case 5:
-//                 animateCircle(circle, 94.14, 85, 3, 2);
-//                 break;
-//             case 6:
-//                 animateCircle(circle, 85.57, 74.2, 3, 2);
-//                 break;
-//             case 7:
-//                 animateCircle(circle, 77, 70, 3, 2);
-//                 break;
-//             default:
-//                 break;
-//         }
-//     });
-// }
-//
-// document.addEventListener('DOMContentLoaded', () => {
-//     addAnimation();
-// });
+// Функція для ініціалізації анімації
+function startAnimation(element, strokeDashoffset, rotation, duration) {
+    element.style.transition = `stroke-dashoffset ${duration}s ease-in-out, transform ${duration}s ease-in-out`;
+    element.style.strokeDashoffset = strokeDashoffset;
+    element.style.transform = `rotate(${rotation}deg)`;
+}
+
+// Вибираємо SVG кола для анімації
+const circle1 = document.querySelector('.rotate-variant-01');
+const circle2 = document.querySelector('.rotate-variant-02');
+const circle11 = document.querySelector('.rotate-variant-11');
+const circle12 = document.querySelector('.rotate-variant-12');
+const circle21 = document.querySelector('.rotate-variant-21');
+const circle22 = document.querySelector('.rotate-variant-22');
+const circle31 = document.querySelector('.rotate-variant-31');
+const circle32 = document.querySelector('.rotate-variant-32');
+
+// Викликаємо анімації
+startAnimation(circle1, '197.58', 94.2, 2);
+startAnimation(circle2, '189.44', 90, 2);
+// startAnimation(circle1, '68.43', 59.2, 2);
+// startAnimation(circle2, '59.86', 55, 2);
+startAnimation(circle11, '85.57', 74.2, 2);
+startAnimation(circle12, '77', 70, 2);
+startAnimation(circle21, '102.71', 89.2, 2);
+startAnimation(circle22, '94.14', 85, 2);
+startAnimation(circle31, '85.57', 74.2, 2);    //+8.14,  +4.2
+startAnimation(circle32, '77', 70, 2);
