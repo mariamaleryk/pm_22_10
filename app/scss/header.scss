@@ -3,14 +3,16 @@
   background-color: #fff;
 }
 
-////all fonts
-.Mont{
+//font
+.Mont {
   font-family: "Montserrat", sans-serif;
 }
+
 .text-section {
   padding-left: 75px;
   margin-bottom: 128px;
 }
+
 //michel
 .header-title {
   text-transform: uppercase;
@@ -18,35 +20,39 @@
   font-size: 75px;
   color: #ffc905;
 }
+
 //rigaurio
 .header-title-b {
   text-transform: uppercase;
   font-size: 75px;
   font-weight: bold;
 }
+
 //ux/ui
 .header-subtitle {
   font-size: 40px;
   letter-spacing: 1px;
 }
+
 .yellow-column {
-  //width: 500px;598
-  height: 2200px;
+  height: 600px;
+  //height: 2100px;
   background-color: #ffc905;
   position: absolute;
   right: 0;
   top: 0;
   z-index: 0;
 }
+
 .profile-image {
   height: auto;
   width: 370px;
-  //right: 20%;
-  right:325px;
+  right: 325px;
   top: 80px;
   position: absolute;
   z-index: 2;
 }
+
 .line-horizontal1 {
   position: absolute;
   top: 470px;
@@ -56,6 +62,7 @@
   background-color: #ffffff;
   z-index: 3;
 }
+
 .line-horizontal2 {
   position: absolute;
   top: 195px;
@@ -65,8 +72,9 @@
   background-color: #2b3036;
   z-index: 3;
 }
+
 .line-horizontal3 {
-  top:300px;
+  top: 300px;
   position: absolute;
   right: 200px;
   width: 700px;

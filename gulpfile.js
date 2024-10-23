@@ -20,8 +20,9 @@ const html_task = () =>  src('app/*.html')
 //js task
 const js_task = () => src('app/js/*.js')
     .pipe(concat('script.min.js'))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(dest('dist/js'));
+
 //scss task
 const scss_task = () => {
     return src('app/scss/*.scss') // Select all SCSS files
@@ -32,7 +33,7 @@ const scss_task = () => {
         .pipe(browserSync.stream()); // Reload BrowserSync
 };
 //img tadk
-const img_task = () =>  src('app/img/*.+(jpg|jpeg|png|gif)',{encoding: false})
+const img_task = () =>  src('app/img/*.+(jpg|jpeg|svg|png|gif)',{encoding: false})
     .pipe(imagemin({
         progressive: true,
         svgoPlugins: [{removeViewBox: false}],
