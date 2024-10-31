@@ -1,38 +1,21 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
+    const headers = document.querySelectorAll(".section-header");
 
-    // Toggle Education Section
-    document.getElementById('education-toggle').addEventListener('click', function() {
-        const educationContent = document.getElementById('education-content');
-        educationContent.classList.toggle('hidden');
-    });
+    headers.forEach((header) => {
+        header.classList.add("roll");
 
-    // Toggle Experience Section
-    document.getElementById('experience-toggle').addEventListener('click', function() {
-        const experienceContent = document.getElementById('experience-content');
-        experienceContent.classList.toggle('hidden');
-    });
+        const content = header.nextElementSibling;
+        if (content && content.classList.contains("roll-block")) {
+            // Початково встановлюємо max-height на повну висоту для розгорнутого вигляду
+            content.style.maxHeight = content.scrollHeight + "px";
 
-    // Toggle Expertise Section
-    document.getElementById('expertise-toggle').addEventListener('click', function() {
-        const expertiseContent = document.getElementById('expertise-content');
-        expertiseContent.classList.toggle('hidden');
-    });
-
-    // Toggle About Me Section
-    document.getElementById('about-me-toggle').addEventListener('click', function() {
-        const aboutMeContent = document.getElementById('about-me-content');
-        aboutMeContent.classList.toggle('hidden');
-    });
-
-    // Toggle Contact Info Section
-    document.getElementById('contact-info-toggle').addEventListener('click', function() {
-        const contactInfoContent = document.getElementById('contact-info-content');
-        contactInfoContent.classList.toggle('hidden');
-    });
-
-    // Toggle Hobbies Section
-    document.getElementById('hobbies-toggle').addEventListener('click', function() {
-        const hobbiesContent = document.getElementById('hobbies-content');
-        hobbiesContent.classList.toggle('hidden');
+            header.addEventListener("click", function () {
+                if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+                    content.style.maxHeight = "0"; // Згорнути
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px"; // Розгорнути
+                }
+            });
+        }
     });
 });
