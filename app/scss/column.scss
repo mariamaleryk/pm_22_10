@@ -244,14 +244,9 @@ text.Data {
   0% {
     stroke-dashoffset: 377;
   }
-  50% {
-    stroke-dashoffset: 0;
-  }
-}
-
-.hidden {
-  display: none;
-  transition: height 0.5s ease-out;
+  //50% {
+  //  stroke-dashoffset: 0;
+  //}
 }
 
 

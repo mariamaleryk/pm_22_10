@@ -1,0 +1,18 @@
+{
+  "experience": [
+    {
+      "jobPosition": "Front-End Developer",
+      "period": "2020-2022",
+      "company": "Tech Co.",
+      "location": "Kyiv",
+      "description": "Developed and maintained web applications."
+    },
+    {
+      "jobPosition": "Back-End Developer",
+      "period": "2018-2020",
+      "company": "Software Solutions",
+      "location": "Lviv",
+      "description": "Implemented server-side logic and databases."
+    }
+  ]
+}
